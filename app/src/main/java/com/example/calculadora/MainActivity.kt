@@ -1,10 +1,10 @@
 package com.example.calculadora
 
-import android.media.VolumeShaper.Operation
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     var aux: String = ""
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textViewMuestra: TextView = findViewById<TextView>(R.id.textViewRespuesta)
+        val textViewShow: TextView = findViewById<TextView>(R.id.textViewRespuesta)
 
         //Numeric buttons
         val bNum1: Button = findViewById<Button>(R.id.buttonN1)
@@ -43,70 +43,71 @@ class MainActivity : AppCompatActivity() {
         bSum.setOnClickListener{
             operationPressed = true
             operationType = 1
-            textViewMuestra.text = ""
+            textViewShow.text = ""
         }
 
         bSub.setOnClickListener{
             operationPressed = true
             operationType = 2
-            textViewMuestra.text = ""
+            textViewShow.text = ""
         }
 
         bMul.setOnClickListener{
             operationPressed = true
             operationType = 3
-            textViewMuestra.text = ""
+            textViewShow.text = ""
         }
 
         bDiv.setOnClickListener{
             operationPressed = true
             operationType = 4
-            textViewMuestra.text = ""
+            textViewShow.text = ""
         }
 
         bClean.setOnClickListener{
             if (operationPressed == false) {
                 firstNumber = ""
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber = ""
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
         bEqual.setOnClickListener{
-            var result: Int = 0
+            val result: Int
             if (operationPressed == true) {
                 when (operationType) {
                     1 -> {
                         result = firstNumber.toInt() + secondNumber.toInt()
                         firstNumber = result.toString()
                         secondNumber = ""
-                        textViewMuestra.text = result.toString()
+                        textViewShow.text = result.toString()
                         operationPressed = false
                     }
                     2 -> {
                         result = firstNumber.toInt() - secondNumber.toInt()
                         firstNumber = result.toString()
                         secondNumber = ""
-                        textViewMuestra.text = result.toString()
+                        textViewShow.text = result.toString()
                         operationPressed = false
                     }
                     3 -> {
                         result = firstNumber.toInt() * secondNumber.toInt()
                         firstNumber = result.toString()
                         secondNumber = ""
-                        textViewMuestra.text = result.toString()
+                        textViewShow.text = result.toString()
                         operationPressed = false
                     }
                     4 -> {
                         result = firstNumber.toInt() / secondNumber.toInt()
                         firstNumber = result.toString()
                         secondNumber = ""
-                        textViewMuestra.text = result.toString()
+                        textViewShow.text = result.toString()
                         operationPressed = false
                     }
                     else -> { //Add message if necessary
+                        print("Select an operation first")
                     }
                 }
             }
@@ -118,10 +119,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -130,10 +131,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -142,10 +143,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -154,10 +155,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -166,10 +167,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -178,10 +179,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -190,10 +191,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -202,10 +203,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -214,10 +215,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -226,10 +227,10 @@ class MainActivity : AppCompatActivity() {
 
             if (operationPressed == false) {
                 firstNumber += aux
-                textViewMuestra.text = firstNumber
+                textViewShow.text = firstNumber
             }else {
                 secondNumber += aux
-                textViewMuestra.text = secondNumber
+                textViewShow.text = secondNumber
             }
         }
 
@@ -237,12 +238,35 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-      //  if (operationPressed == false) {
-      //      val text: TextView = findViewById(R.id.textViewRespuesta)
-      //      firstNumber = text.toString()
-      //  }else {
-      //      val text: TextView = findViewById(R.id.textViewRespuesta)
-      //      secondNumber = text.toString()
-      //  }
+        Log.d("Debug","onResume")
+        if (operationPressed == false && firstNumber != "") {
+            val text: TextView = findViewById(R.id.textViewRespuesta)
+            firstNumber = text.text.toString()
+        }
+        if(operationPressed == true && secondNumber != "") {
+            val text: TextView = findViewById(R.id.textViewRespuesta)
+            secondNumber = text.toString()
+        }
     }
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.d("Debug","onSaveInstanceState")
+        Log.d("Debug",firstNumber)
+    // Save the user's current game state.
+        outState?.run {
+            putString("result", firstNumber)
+        }
+    // Always call the superclass so it can save the view hierarchy.
+        super.onSaveInstanceState(outState)
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+    // Always call the superclass so it can restore the view hierarchy.
+        super.onRestoreInstanceState(savedInstanceState)
+    // Restore state members from saved instance.
+        savedInstanceState?.run {
+            firstNumber = savedInstanceState.getString("result").toString()
+            val textViewShow: TextView = findViewById<TextView>(R.id.textViewRespuesta)
+            textViewShow.text=firstNumber
+        }
+    }
+
 }

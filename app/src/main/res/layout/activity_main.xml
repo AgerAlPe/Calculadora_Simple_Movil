@@ -295,7 +295,6 @@
         android:id="@+id/textViewRespuesta"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:text="0"
         android:textAlignment="viewEnd"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonShare"
